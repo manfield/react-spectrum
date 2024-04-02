@@ -27,6 +27,11 @@ export interface CalendarPropsBase {
   /** The maximum allowed date that a user may select. */
   maxValue?: DateValue,
   /** Callback that is called for each date of the calendar. If it returns true, then the date is unavailable. */
+
+  /** Whether the date is no check out. */
+  isNoCheckOut?: (date: DateValue) => boolean,
+  /** Wheter the date is no check in. */
+  isNoCheckIn?: (date: DateValue) => boolean,
   isDateUnavailable?: (date: DateValue) => boolean,
   /**
    * Whether the calendar is disabled.

@@ -42,6 +42,8 @@ export function CalendarCell({state, currentMonth, ...props}: CalendarCellProps)
     isDisabled: !isSameMonth(props.date, currentMonth)
   }, state, ref);
   let isUnavailable = state.isCellUnavailable(props.date) && !isDisabled;
+  let isNoCheckIn: boolean = state.isNoCheckIn(props.date);
+  let isNoCheckout: boolean = state.isNoCheckOut(props.date);
   let isLastSelectedBeforeDisabled = !isDisabled && !isInvalid && state.isCellUnavailable(props.date.add({days: 1}));
   let isFirstSelectedAfterDisabled = !isDisabled && !isInvalid && state.isCellUnavailable(props.date.subtract({days: 1}));
   let highlightedRange = 'highlightedRange' in state && state.highlightedRange;
@@ -69,6 +71,8 @@ export function CalendarCell({state, currentMonth, ...props}: CalendarCellProps)
           // since it is more clear than trying to dim the selection.
           'is-disabled': isDisabled && !isInvalid,
           'is-unavailable': isUnavailable || (isInvalid && isDisabled),
+          'is-no-checkin': isNoCheckIn,
+          'is-no-checkout': isNoCheckout,
           'is-outsideMonth': !isSameMonth(props.date, currentMonth),
           'is-range-start': isRangeStart,
           'is-range-end': isRangeEnd,

@@ -88,6 +88,10 @@ interface CalendarStateBase {
   isCellDisabled(date: CalendarDate): boolean,
   /** Returns whether the given date is unavailable according to the `isDateUnavailable` prop. */
   isCellUnavailable(date: CalendarDate): boolean,
+  /** Whether the date is no check out. */
+  isNoCheckOut(date: CalendarDate): boolean,
+  /** Wheter the date is no check in. */
+  isNoCheckIn(date: CalendarDate): boolean,
   /** Returns whether the previous visible date range is allowed to be selected according to the `minValue` prop. */
   isPreviousVisibleRangeInvalid(): boolean,
   /** Returns whether the next visible date range is allowed to be selected according to the `maxValue` prop. */

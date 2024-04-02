@@ -208,6 +208,10 @@ governing permissions and limitations under the License.
     }
   }
 
+  &.is-no-checkin, &.is-no-checkout {
+    background-color: red;
+  }
+
   &.is-outsideMonth {
     visibility: hidden;
   }

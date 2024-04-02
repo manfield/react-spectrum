@@ -67,6 +67,8 @@ export function useCalendarState<T extends DateValue = DateValue>(props: Calenda
     maxValue,
     selectionAlignment,
     isDateUnavailable,
+    isNoCheckOut,
+    isNoCheckIn,
     pageBehavior = 'visible'
   } = props;
   let calendar = useMemo(() => createCalendar(resolvedOptions.calendar), [createCalendar, resolvedOptions.calendar]);
@@ -308,6 +310,12 @@ export function useCalendarState<T extends DateValue = DateValue>(props: Calenda
     },
     isCellUnavailable(date) {
       return props.isDateUnavailable && props.isDateUnavailable(date);
+    },
+    isNoCheckIn(date: CalendarDate) : boolean {
+      return props.isNoCheckIn && props.isNoCheckIn(date);
+    },
+    isNoCheckOut(date: CalendarDate) : boolean {
+      return props.isNoCheckOut && props.isNoCheckOut(date);
     },
     isPreviousVisibleRangeInvalid() {
       let prev = startDate.subtract({days: 1});
