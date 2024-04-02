@@ -1,6 +1,6 @@
 {
-  "name": "@manfield/react-spectrum-monorepo",
-  "private": false,
+  "name": "react-spectrum-monorepo",
+  "private": true,
   "version": "1.0",
   "description": "Spectrum UI components in React",
   "repository": {
