@@ -52,11 +52,7 @@
     "blc:prod": "npx git+ssh://git@github.com:ktabors/rsp-blc.git -u https://react-spectrum.adobe.com/"
   },
   "workspaces": [
-    "packages/react-stately",
-    "packages/react-aria",
-    "packages/react-aria-components",
-    "packages/tailwindcss-react-aria-components",
-    "packages/*/*"
+    "packages/react-spectrum"
   ],
   "devDependencies": {
     "@actions/core": "^1.1.0",
